@@ -11,9 +11,6 @@
 
     <script>
       const urlParam = new URLSearchParams(window.location.search);
-      console.log(typeof urlParam.get("debug"));
-      console.log(urlParam.get("debug"));
-
       const components = urlParam.get("components") || "snare,kick,hihat";
       const debug = urlParam.get("debug") || false;
       const querystring = `components=${components}&debug=${debug}`;
