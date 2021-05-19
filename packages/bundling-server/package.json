@@ -7,8 +7,7 @@
     "start": "node src/server.js",
     "lint": "eslint .",
     "prettier": "prettier --write .",
-    "test": "npm run lint",
-    "build": "node build.js"
+    "test": "npm run lint"
   },
   "author": "Greg Jopa",
   "license": "MIT",
