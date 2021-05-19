@@ -18,7 +18,7 @@ fastify.get("/sdk/js", async (request, reply) => {
   } else {
     const {
       format = "iife",
-      debug = false,
+      debug = "false",
       components = "hihat,snare,kick",
     } = request.query;
     const componentsArray = components.split(",");
@@ -29,7 +29,7 @@ fastify.get("/sdk/js", async (request, reply) => {
         __KICK__: componentsArray.includes("kick"),
         __HIHAT__: componentsArray.includes("hihat"),
       },
-      minify: debug === false,
+      minify: debug === "false",
       format,
     });
 
@@ -44,7 +44,7 @@ fastify.get("/sdk/js", async (request, reply) => {
 
 const start = async () => {
   try {
-    await fastify.listen(3000);
+    await fastify.listen(process.env.PORT || 3000);
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dynamic Query Parameters Demo page</title>
+  </head>
+  <body>
+    <div class="container"></div>
+    <br />
+    <div class="container2"></div>
+
+    <script>
+      const urlParam = new URLSearchParams(window.location.search);
+      console.log(typeof urlParam.get("debug"));
+      console.log(urlParam.get("debug"));
+
+      const components = urlParam.get("components") || "snare,kick,hihat";
+      const debug = urlParam.get("debug") || false;
+      const querystring = `components=${components}&debug=${debug}`;
+
+      const sdkScript = document.createElement("script");
+      sdkScript.src = `/sdk/js?${querystring}`;
+
+      sdkScript.onerror = () => console.error("failed to load sdk script");
+      sdkScript.onload = onload;
+
+      document.head.insertBefore(sdkScript, document.head.firstElementChild);
+
+      function onload() {
+        const { addBasicButton, addAdvancedButton } = window.drums;
+
+        const container = document.querySelector(".container");
+        const container2 = document.querySelector(".container2");
+
+        addBasicButton(container);
+        addAdvancedButton(container2);
+      }
+    </script>
+  </body>
+</html>
