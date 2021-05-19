@@ -1,6 +1,6 @@
 {
   "name": "@bundling-server-example/basic-button",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "This button plays a basic drum pattern",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,6 @@
     "prettier": "2.3.0"
   },
   "dependencies": {
-    "@bundling-server-example/drum-sequencer": "^0.1.1"
+    "@bundling-server-example/drum-sequencer": "^0.1.2"
   }
 }

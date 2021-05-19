@@ -1,6 +1,6 @@
 {
   "name": "@bundling-server-example/sdk-release",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "client-side sdk release repo",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "Greg Jopa",
   "license": "MIT",
   "dependencies": {
-    "@bundling-server-example/advanced-button": "^0.1.0",
-    "@bundling-server-example/basic-button": "^0.1.0"
+    "@bundling-server-example/advanced-button": "^0.1.1",
+    "@bundling-server-example/basic-button": "^0.1.1"
   }
 }
