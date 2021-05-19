@@ -1,0 +1,17 @@
+{
+  "name": "@bundling-server-example/drum-samples",
+  "version": "0.1.3",
+  "description": "Drum samples",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "prettier": "prettier --write .",
+    "test": "npm run lint"
+  },
+  "author": "Greg Jopa",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "prettier": "2.3.0"
+  }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Drum Samples Test Page</title>
+  </head>
+  <body>
+    <script type="module">
+      import { DrumSequencer } from "./dist/output.js";
+
+      const sequencer = new DrumSequencer();
+      sequencer.decodeSamples().then(() => {
+        const playButton = document.querySelector("#btn-play");
+        playButton.addEventListener("click", function () {
+          if (this.innerHTML === "Play") {
+            sequencer.play();
+            this.innerHTML = "Stop";
+          } else {
+            sequencer.stop();
+            this.innerHTML = "Play";
+          }
+        });
+      });
+    </script>
+
+    <button id="btn-play" type="button">Play</button>
+  </body>
+</html>

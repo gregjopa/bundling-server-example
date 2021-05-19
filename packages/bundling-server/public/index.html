@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>IIFE Demo page</title>
+  </head>
+  <body>
+    <div class="container"></div>
+    <br />
+    <div class="container2"></div>
+
+    <script src="/sdk/js?debug=true&components=kick"></script>
+    <script>
+      const container = document.querySelector(".container");
+      const container2 = document.querySelector(".container2");
+
+      window.drums.addBasicButton(container);
+      window.drums.addAdvancedButton(container2);
+    </script>
+  </body>
+</html>

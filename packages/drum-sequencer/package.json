@@ -1,0 +1,22 @@
+{
+  "name": "@bundling-server-example/drum-sequencer",
+  "version": "0.1.1",
+  "description": "A basic drum sequencer",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "prettier": "prettier --write .",
+    "test": "npm run lint",
+    "build": "node build.js"
+  },
+  "author": "Greg Jopa",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.11.23",
+    "eslint": "^7.26.0",
+    "prettier": "2.3.0"
+  },
+  "dependencies": {
+    "@bundling-server-example/drum-samples": "^0.1.3"
+  }
+}

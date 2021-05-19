@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ESM Demo page</title>
+  </head>
+  <body>
+    <div class="container"></div>
+    <br />
+    <div class="container2"></div>
+
+    <script type="module">
+      import {
+        addBasicButton,
+        addAdvancedButton,
+      } from "/sdk/js?debug=true&format=esm";
+
+      const container = document.querySelector(".container");
+      const container2 = document.querySelector(".container2");
+
+      addBasicButton(container);
+      addAdvancedButton(container2);
+    </script>
+  </body>
+</html>

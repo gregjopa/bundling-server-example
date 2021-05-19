@@ -1,0 +1,7 @@
+{
+  "name": "bundling-server-example",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Drum Samples Test Page</title>
+  </head>
+  <body>
+    <script type="module">
+      import {
+        hihatClosedSample,
+        hihatOpenSample,
+        snareSample,
+        kickSample,
+        rimSample,
+      } from "./index.js";
+
+      function createAudioElement({ name, value }) {
+        const audio = document.createElement("audio");
+        audio.controls = "controls";
+        audio.src = `data:audio/x-wav;base64, ${value}`;
+
+        const container = document.createElement("div");
+        const titleElement = document.createElement("div");
+        titleElement.appendChild(document.createTextNode(name));
+        container.appendChild(titleElement);
+        container.appendChild(audio);
+
+        document.body.appendChild(container);
+      }
+
+      createAudioElement(hihatClosedSample);
+      createAudioElement(hihatOpenSample);
+      createAudioElement(snareSample);
+      createAudioElement(kickSample);
+      createAudioElement(rimSample);
+    </script>
+  </body>
+</html>

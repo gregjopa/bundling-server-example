@@ -1,0 +1,22 @@
+{
+  "name": "@bundling-server-example/advanced-button",
+  "version": "0.1.0",
+  "description": "This button plays a advanced drum pattern",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "prettier": "prettier --write .",
+    "test": "npm run lint",
+    "build": "node build.js"
+  },
+  "author": "Greg Jopa",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.11.23",
+    "eslint": "^7.26.0",
+    "prettier": "2.3.0"
+  },
+  "dependencies": {
+    "@bundling-server-example/drum-sequencer": "^0.1.1"
+  }
+}

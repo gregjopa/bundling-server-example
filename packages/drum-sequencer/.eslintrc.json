@@ -1,0 +1,16 @@
+{
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "globals": {
+    "__SNARE__": true,
+    "__KICK__": false,
+    "__HIHAT__": false
+  }
+}
