@@ -4,7 +4,7 @@ import {
   snareSample,
   kickSample,
 } from "@bundling-server-example/drum-samples";
-import { base64ToArrayBuffer, mixDown } from "./utils";
+import { base64ToArrayBuffer, mixDown, decodeAudioDataPromise } from "./utils";
 
 /*
   8th note tracks:
@@ -38,7 +38,10 @@ export class DrumSequencer {
   async decodeSamples() {
     try {
       const sample = base64ToArrayBuffer(hihatClosedSample.value);
-      const decodedAudioData = await this.audioContext.decodeAudioData(sample);
+      const decodedAudioData = await decodeAudioDataPromise({
+        audioContext: this.audioContext,
+        arrayBuffer: sample,
+      });
       this.hihatClosedBufferSource = decodedAudioData;
     } catch (err) {
       console.error("failed to decode hihat closed sample");
@@ -47,9 +50,10 @@ export class DrumSequencer {
     if (__HIHAT__) {
       try {
         const sample = base64ToArrayBuffer(hihatOpenSample.value);
-        const decodedAudioData = await this.audioContext.decodeAudioData(
-          sample
-        );
+        const decodedAudioData = await decodeAudioDataPromise({
+          audioContext: this.audioContext,
+          arrayBuffer: sample,
+        });
         this.hihatOpenBufferSource = decodedAudioData;
       } catch (err) {
         console.error("failed to decode hihat open sample");
@@ -59,9 +63,10 @@ export class DrumSequencer {
     if (__SNARE__) {
       try {
         const sample = base64ToArrayBuffer(snareSample.value);
-        const decodedAudioData = await this.audioContext.decodeAudioData(
-          sample
-        );
+        const decodedAudioData = await decodeAudioDataPromise({
+          audioContext: this.audioContext,
+          arrayBuffer: sample,
+        });
         this.snareBufferSource = decodedAudioData;
       } catch (err) {
         console.error("failed to decode snare sample");
@@ -71,9 +76,10 @@ export class DrumSequencer {
     if (__KICK__) {
       try {
         const sample = base64ToArrayBuffer(kickSample.value);
-        const decodedAudioData = await this.audioContext.decodeAudioData(
-          sample
-        );
+        const decodedAudioData = await decodeAudioDataPromise({
+          audioContext: this.audioContext,
+          arrayBuffer: sample,
+        });
         this.kickBufferSource = decodedAudioData;
       } catch (err) {
         console.error("failed to decode kick sample");

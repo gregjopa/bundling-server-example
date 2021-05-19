@@ -36,3 +36,17 @@ export function mixDown({
 
   return finalMix;
 }
+
+export function decodeAudioDataPromise({ audioContext, arrayBuffer }) {
+  return new Promise((resolve, reject) => {
+    audioContext.decodeAudioData(
+      arrayBuffer,
+      (decodedAudioData) => {
+        return resolve(decodedAudioData);
+      },
+      (err) => {
+        reject(err);
+      }
+    );
+  });
+}
