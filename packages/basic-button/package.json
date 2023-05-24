@@ -1,6 +1,6 @@
 {
   "name": "@bundling-server-example/basic-button",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "This button plays a basic drum pattern",
   "main": "index.js",
   "scripts": {
@@ -12,11 +12,11 @@
   "author": "Greg Jopa",
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.11.23",
-    "eslint": "^7.26.0",
-    "prettier": "2.3.0"
+    "esbuild": "^0.17.19",
+    "eslint": "^8.40.0",
+    "prettier": "2.8.8"
   },
   "dependencies": {
-    "@bundling-server-example/drum-sequencer": "^0.1.2"
+    "@bundling-server-example/drum-sequencer": "^0.2.0"
   }
 }

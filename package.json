@@ -1,7 +1,10 @@
 {
   "name": "bundling-server-example",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^6.6.2"
   }
 }

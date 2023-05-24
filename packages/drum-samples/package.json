@@ -11,7 +11,7 @@
   "author": "Greg Jopa",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^7.26.0",
-    "prettier": "2.3.0"
+    "eslint": "^8.40.0",
+    "prettier": "2.8.8"
   }
 }

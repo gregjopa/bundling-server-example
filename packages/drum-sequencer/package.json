@@ -1,6 +1,6 @@
 {
   "name": "@bundling-server-example/drum-sequencer",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "A basic drum sequencer",
   "main": "index.js",
   "scripts": {

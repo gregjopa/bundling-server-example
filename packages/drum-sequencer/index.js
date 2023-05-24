@@ -88,7 +88,6 @@ export class DrumSequencer {
   }
 
   scheduleNextPlay() {
-    // console.log('this.audioContext.currentTime', this.audioContext.currentTime);
     if (this.nextPlayTime < this.audioContext.currentTime + 0.5) {
       this.playSample();
       this.nextPlayTime += this.durationInSeconds;
@@ -143,6 +142,8 @@ export class DrumSequencer {
   }
 
   play(volume = 1) {
+    this.resumeAudioContext();
+
     if (this.isPlaying) {
       return;
     }
@@ -164,6 +165,12 @@ export class DrumSequencer {
       );
       this.isPlaying = false;
       clearInterval(this.interval);
+    }
+  }
+
+  resumeAudioContext() {
+    if (this.audioContext && this.audioContext.state === "suspended") {
+      this.audioContext.resume();
     }
   }
 }

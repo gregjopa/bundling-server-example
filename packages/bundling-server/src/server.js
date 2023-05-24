@@ -2,7 +2,7 @@ const fastify = require("fastify")({ logger: true });
 const path = require("path");
 const build = require("./build");
 
-fastify.register(require("fastify-static"), {
+fastify.register(require("@fastify/static"), {
   root: path.join(__dirname, "../public"),
   prefix: "/public/",
   list: true,
@@ -25,9 +25,9 @@ fastify.get("/sdk/js", async (request, reply) => {
 
     text = await build({
       define: {
-        __SNARE__: componentsArray.includes("snare"),
-        __KICK__: componentsArray.includes("kick"),
-        __HIHAT__: componentsArray.includes("hihat"),
+        __SNARE__: String(componentsArray.includes("snare")),
+        __KICK__: String(componentsArray.includes("kick")),
+        __HIHAT__: String(componentsArray.includes("hihat")),
       },
       minify: debug === "false",
       format,
@@ -44,7 +44,10 @@ fastify.get("/sdk/js", async (request, reply) => {
 
 const start = async () => {
   try {
-    await fastify.listen(process.env.PORT || 3000, process.env.HOST || "::");
+    await fastify.listen({
+      port: process.env.PORT || 3000,
+      host: process.env.HOST || "::",
+    });
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);

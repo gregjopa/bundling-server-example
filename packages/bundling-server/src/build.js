@@ -9,6 +9,7 @@ async function build({ define, minify, format }) {
       entryPoints: [
         path.join(
           process.cwd(),
+          "../../",
           "/node_modules/@bundling-server-example/sdk-release/index.js"
         ),
       ],
