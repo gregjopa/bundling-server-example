@@ -1,6 +1,8 @@
 const esbuild = require("esbuild");
 const path = require("path");
 
+const nodeModulesPath = process.env.NODE_MODULES_PATH || "../../node_modules/";
+
 async function build({ define, minify, format }) {
   let buildOutput;
 
@@ -9,8 +11,8 @@ async function build({ define, minify, format }) {
       entryPoints: [
         path.join(
           process.cwd(),
-          "../../",
-          "/node_modules/@bundling-server-example/sdk-release/index.js"
+          nodeModulesPath,
+          "/@bundling-server-example/sdk-release/index.js"
         ),
       ],
       bundle: true,
