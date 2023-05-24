@@ -42,6 +42,10 @@ fastify.get("/sdk/js", async (request, reply) => {
     .send(text);
 });
 
+fastify.get("/", (request, reply) => {
+  reply.redirect("/public/dynamic.html?components=hihat");
+});
+
 const start = async () => {
   try {
     await fastify.listen({
